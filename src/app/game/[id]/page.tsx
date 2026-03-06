@@ -25,7 +25,7 @@ export default function GameDetails() {
     const fetchGameDetails = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`http://localhost:4000/games/${id}`);
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/${id}`);
         setGame(response.data);
       } catch (err) {
         console.error("Error al cargar detalles:", err);
@@ -41,7 +41,7 @@ export default function GameDetails() {
     return (
       <div className="min-h-screen bg-gray-900 text-white p-10 flex flex-col items-center justify-center">
         <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500 mb-4"></div>
-        <p className="text-xl font-semibold animate-pulse">Cargando detalles del juego... ⏳</p>
+        <p className="text-xl font-semibold animate-pulse">Cargando detalles del juego...</p>
       </div>
     );
   }

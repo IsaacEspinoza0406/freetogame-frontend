@@ -13,7 +13,7 @@ RUN npm install
 # Copiar el resto del código
 COPY . .
 
-# Construir la aplicación para producción (opcional en dev, pero buena práctica)
+# Construir la aplicación para producción.
 RUN npm run build
 
 # Exponer el puerto
